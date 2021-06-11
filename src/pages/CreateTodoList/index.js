@@ -31,7 +31,7 @@ const CreateTodoList = () => {
       <CardBase className="create-todo-list-container">
         <h1>Nueva Lista de tareas:</h1>
         <form className="create-todo-list-container-form" onSubmit={handleSumbit}>
-          <input className="create-todo-list-container-form-input" value={newTask} onChange={handleOnChange} />
+          <input className="create-todo-list-container-form-input" value={newTask} onChange={handleOnChange} maxlength="80" />
         </form>
         {items.map((item, id) => <p key={item.id}>{`${id}. ${item.task}`}</p>)}
       </CardBase>

@@ -1,0 +1,19 @@
+.todo-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  &-description {
+    display: flex;
+    flex-direction: column;
+  }
+  &-right-content {
+    display: flex;
+    align-items: center;
+    svg {
+      cursor: pointer;
+    }
+    &-completed {
+      color: #4bb543;
+    }
+  }
+}

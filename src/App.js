@@ -7,17 +7,19 @@ import {
 import Navbar from './components/Navbar';
 
 import CreateTodoList from './pages/CreateTodoList';
+import ShowTodoLists from './pages/ShowTodoLists';
 
 function App() {
+
   return (
     <Router>
       <Navbar />
       <Switch>
-        <Route path="/about">
-          <About />
-        </Route>
-        <Route path="/">
+        <Route exact path="/">
           <CreateTodoList />
+        </Route>
+        <Route path="/about">
+          <ShowTodoLists />
         </Route>
       </Switch>
     </Router>
@@ -25,7 +27,3 @@ function App() {
 }
 
 export default App;
-
-function About() {
-  return <h2>About</h2>;
-}
