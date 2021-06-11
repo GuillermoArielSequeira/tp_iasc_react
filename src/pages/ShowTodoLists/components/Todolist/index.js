@@ -10,6 +10,7 @@ const ShowTodoLists = ({ todoList }) => {
     e.preventDefault();
     const foundTask = todoListEditable.tasks.find(task => task.id === id);
     foundTask.completed = true;
+    foundTask.edit = false;
     setTodoListEditable({
       id: todoListEditable.id,
       tasks: [

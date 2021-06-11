@@ -12,7 +12,13 @@ const EditItem = ({ idTask, closeInput, changeDescription, editTask }) => {
 
   return (
     <div className="edit-item">
-      <input className="create-todo-list-container-form-input" maxLength="80" value={newTask} onChange={handleOnChange} />
+      <input
+        className="create-todo-list-container-form-input"
+        maxLength="80"
+        value={newTask}
+        onChange={handleOnChange}
+        placeholder="Actualize la tarea a realizar..."
+      />
       <>
         <a onClick={
           e => {
