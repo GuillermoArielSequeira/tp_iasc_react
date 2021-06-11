@@ -11,6 +11,7 @@ const ShowTodoLists = () => {
       {todoLists.map(todoList => (
         <CardBase key={todoList.id} className="show-todo-list-container">
           <TodoList todoList={todoList} />
+          <a className="show-todo-list-container-button">Actualizar Lista de tareas</a>
         </CardBase>
       ))}
     </div>

@@ -33,7 +33,10 @@ const CreateTodoList = () => {
         <form className="create-todo-list-container-form" onSubmit={handleSumbit}>
           <input className="create-todo-list-container-form-input" value={newTask} onChange={handleOnChange} maxlength="80" />
         </form>
-        {items.map((item, id) => <p key={item.id}>{`${id}. ${item.task}`}</p>)}
+        <div className="create-todo-list-container-description">
+          {items.map((item, id) => <span className="create-todo-list-container-description-item" key={item.id} >{`${id}. ${item.task}`}</span>)}
+        </div>
+        {items.length > 0 && <a className="create-todo-list-container-button">Crear todoList</a>}
       </CardBase>
     </div>
   )

@@ -53,7 +53,7 @@ const ShowTodoLists = ({ todoList }) => {
   }
 
   return (
-    <>
+    <div>
       {
         todoListEditable.tasks.length ? todoListEditable.tasks.map(task => (
           <div className='todo-item'>
@@ -70,7 +70,7 @@ const ShowTodoLists = ({ todoList }) => {
                 />}
             </div>
             <div className='todo-item-right-content'>
-              {task.completed && <p className="todo-item-right-content-completed">completed!</p>}
+              {task.completed && <p className="todo-item-right-content-completed">completada!</p>}
               {!task.completed &&
                 <a onClick={e => editTask(task.id, e, true)}>
                   {getIcon('edit')}
@@ -86,7 +86,7 @@ const ShowTodoLists = ({ todoList }) => {
           </div>
         )) : <p>No hay mas tareas para eliminar</p>
       }
-    </>
+    </div>
   )
 }
 

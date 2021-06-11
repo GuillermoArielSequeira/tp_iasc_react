@@ -3,6 +3,33 @@
   margin: 20px auto;
 
   &-container {
+    display: flex;
+    flex-direction: column;
+    &-description {
+      display: flex;
+      flex-direction: column;
+      &-item {
+        padding: 15px 0;
+        &:not(:last-child) {
+          border-bottom: 1px solid #ededed;
+          padding-bottom: 10px;
+        }
+      }
+    }
+
+    &-button {
+      margin-top: 15px;
+      cursor: pointer;
+      text-align: center;
+      padding: 15px 40px;
+      background: #f9004d;
+      color: white;
+      border-radius: 6px;
+      align-self: center;
+      &:hover {
+        opacity: 0.75;
+      }
+    }
     &-form {
       &-input {
         background-color: #fff;
