@@ -44,13 +44,15 @@ const ShowTodoLists = ({ todoList }) => {
 
   const changeDescription = (id, description) => {
     const foundTask = todoListEditable.tasks.find(task => task.id === id);
-    foundTask.description = description;
-    setTodoListEditable({
-      id: todoListEditable.id,
-      tasks: [
-        ...todoListEditable.tasks,
-      ]
-    })
+    if (description.trim() !== '') {
+      foundTask.description = description;
+      setTodoListEditable({
+        id: todoListEditable.id,
+        tasks: [
+          ...todoListEditable.tasks,
+        ]
+      })
+    }
   }
 
   return (
