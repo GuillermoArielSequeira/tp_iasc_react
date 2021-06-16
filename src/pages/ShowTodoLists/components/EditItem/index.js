@@ -3,12 +3,11 @@ import { getIcon } from '../../../../icons';
 import './index.scss';
 
 const EditItem = ({ idTask, closeInput, changeDescription, editTask }) => {
-
   const [newTask, setNewTask] = useState('');
 
-  const handleOnChange = e => {
+  const handleOnChange = (e) => {
     setNewTask(e.target.value);
-  }
+  };
 
   return (
     <div className="edit-item">
@@ -20,16 +19,15 @@ const EditItem = ({ idTask, closeInput, changeDescription, editTask }) => {
         placeholder="Actualize la tarea a realizar..."
       />
       <>
-        <a onClick={
-          e => {
-            changeDescription(idTask, newTask)
-            editTask(idTask, e)
-          }}>
+        <a
+          onClick={(e) => {
+            changeDescription(idTask, newTask);
+            editTask(idTask, e);
+          }}
+        >
           {getIcon('check', 'green')}
         </a>
-        <a onClick={closeInput}>
-          {getIcon('close', 'red')}
-        </a>
+        <a onClick={closeInput}>{getIcon('close', 'red')}</a>
       </>
     </div>
   );

@@ -1,9 +1,8 @@
-import React  from 'react';
+import React from 'react';
 import './index.scss';
 
-const AddTask = ({newTask, onChange, addTask}) => {
-
-  return(
+const AddTask = ({ newTask, onChange, addTask }) => {
+  return (
     <div className="add-task">
       <input
         className="add-task-input"
@@ -12,12 +11,12 @@ const AddTask = ({newTask, onChange, addTask}) => {
         onChange={onChange}
         placeholder="Agregue una tarea nueva..."
       />
-  
+
       <a className="add-task-button" onClick={addTask}>
-      Agregar nueva tarea
+        Agregar nueva tarea
       </a>
     </div>
-)
-}
+  );
+};
 
 export default AddTask;

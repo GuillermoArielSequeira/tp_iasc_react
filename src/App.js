@@ -1,16 +1,11 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-} from "react-router-dom";
+import React from 'react';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 
 import CreateTodoList from './pages/CreateTodoList';
 import ShowTodoLists from './pages/ShowTodoLists';
 
 function App() {
-
   return (
     <Router>
       <Navbar />
