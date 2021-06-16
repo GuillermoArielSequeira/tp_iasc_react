@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import CardBase from '../../components/CardBase'
 import './index.scss';
-import { v4 as uuidv4 } from 'uuid'
 
 const CreateTodoList = () => {
   const [newTask, setNewTask] = useState('');
@@ -18,8 +17,8 @@ const CreateTodoList = () => {
         [
           ...items,
           {
-            id: uuidv4(),
-            task: newTask,
+            id: items.length,
+            description: newTask,
             completed: false
           }
         ])

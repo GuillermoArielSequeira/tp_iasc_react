@@ -1,10 +1,29 @@
 import React, { useState } from 'react';
 import EditItem from '../EditItem';
+import AddTask from '../AddTask';
 import { getIcon } from '../../../../icons';
 import './index.scss';
 
 const ShowTodoLists = ({ todoList }) => {
   const [todoListEditable, setTodoListEditable] = useState(todoList);
+  const [newTask, setNewTask] = useState('');
+
+  const handleOnChange = e => {
+    setNewTask(e.target.value);
+  }
+  const handleAddTask = () => {
+    setTodoListEditable({
+      id: todoListEditable.id,
+      tasks: [
+        ...todoListEditable.tasks,
+        {
+          id: todoListEditable.tasks.length + 1,
+          description: newTask,
+          completed: false
+        }
+      ]
+    })
+  }
 
   const markTaskAsCompleted = (id, e) => {
     e.preventDefault();
@@ -57,8 +76,10 @@ const ShowTodoLists = ({ todoList }) => {
 
   return (
     <div>
+      <AddTask newTask={newTask} onChange={handleOnChange} addTask={handleAddTask}/>
       {
         todoListEditable.tasks.length ? todoListEditable.tasks.map(task => (
+          
           <div className='todo-item'>
             <div className='todo-item-description'>
               <p key={task.id}>
@@ -87,7 +108,7 @@ const ShowTodoLists = ({ todoList }) => {
               </a>
             </div>
           </div>
-        )) : <p>No hay mas tareas para eliminar</p>
+        )) : <p className="no-todo-item">No hay mas tareas para eliminar</p>
       }
     </div>
   )

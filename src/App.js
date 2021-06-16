@@ -18,7 +18,7 @@ function App() {
         <Route exact path="/">
           <CreateTodoList />
         </Route>
-        <Route path="/about">
+        <Route exact path="/about">
           <ShowTodoLists />
         </Route>
       </Switch>
